@@ -8,13 +8,11 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
+namespace Carbon;
 
-/*
- * Authors:
- * - Ge'ez Frontier Foundation    locales@geez.org
- */
-return array_replace_recursive(require __DIR__.'/so.php', [
-    'formats' => [
-        'L' => 'DD.MM.YYYY',
-    ],
-]);
+use DateTimeInterface;
+
+interface CarbonConverterInterface
+{
+    public function convertDate(DateTimeInterface $dateTime, bool $negated = false): CarbonInterface;
+}

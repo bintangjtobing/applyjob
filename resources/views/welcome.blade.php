@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Jobpply - Free Bootstrap 4 Template by Colorlib</title>
+    <title>Jobpply | Part of Infinity Solutions</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -32,7 +32,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
         <div class="container">
-            <a class="navbar-brand" href="index.html">Jobpply</a>
+            <a class="navbar-brand" href="/">Jobpply</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
                 aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="oi oi-menu"></span> Menu
@@ -40,13 +40,13 @@
 
             <div class="collapse navbar-collapse" id="ftco-nav">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
-                    <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-                    <li class="nav-item"><a href="candidates.html" class="nav-link">Canditates</a></li>
-                    <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
-                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-                    <li class="nav-item cta mr-md-1"><a href="new-post.html" class="nav-link">Post a Job</a></li>
-                    <li class="nav-item cta cta-colored"><a href="job-post.html" class="nav-link">Want a Job</a></li>
+                    <li class="nav-item active"><a href="/" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="about" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="candidates" class="nav-link">Canditates</a></li>
+                    <li class="nav-item"><a href="blog" class="nav-link">Blog</a></li>
+                    <li class="nav-item"><a href="contact" class="nav-link">Contact</a></li>
+                    <li class="nav-item cta mr-md-1"><a href="new-post" class="nav-link">Post a Job</a></li>
+                    <li class="nav-item cta cta-colored"><a href="job-post" class="nav-link">Want a Job</a></li>
 
                 </ul>
             </div>
@@ -64,7 +64,7 @@
                     <div class="text mt-5">
                         <p class="mb-4 mt-5 pt-5">We have <span class="number" data-number="200000">0</span> great job
                             offers you deserve!</p>
-                        <h1 class="mb-5">Largets Job Site In The World</h1>
+                        <h1 class="mb-5">Largest Job Site In The World</h1>
 
                         <div class="ftco-search">
                             <div class="row">
@@ -356,7 +356,7 @@
                                             <span class="icon-heart"></span>
                                         </a>
                                     </div>
-                                    <a href="job-single.html" class="btn btn-primary py-2">Apply Job</a>
+                                    <a href="job-single" class="btn btn-primary py-2">Apply Job</a>
                                 </div>
                             </div>
                         </div><!-- end -->
@@ -384,7 +384,7 @@
                                             <span class="icon-heart"></span>
                                         </a>
                                     </div>
-                                    <a href="job-single.html" class="btn btn-primary py-2">Apply Job</a>
+                                    <a href="job-single" class="btn btn-primary py-2">Apply Job</a>
                                 </div>
                             </div>
                         </div><!-- end -->
@@ -413,7 +413,7 @@
                                             <span class="icon-heart"></span>
                                         </a>
                                     </div>
-                                    <a href="job-single.html" class="btn btn-primary py-2">Apply Job</a>
+                                    <a href="job-single" class="btn btn-primary py-2">Apply Job</a>
                                 </div>
                             </div>
                         </div><!-- end -->
@@ -441,7 +441,7 @@
                                             <span class="icon-heart"></span>
                                         </a>
                                     </div>
-                                    <a href="job-single.html" class="btn btn-primary py-2">Apply Job</a>
+                                    <a href="job-single" class="btn btn-primary py-2">Apply Job</a>
                                 </div>
                             </div>
                         </div><!-- end -->
@@ -470,7 +470,7 @@
                                             <span class="icon-heart"></span>
                                         </a>
                                     </div>
-                                    <a href="job-single.html" class="btn btn-primary py-2">Apply Job</a>
+                                    <a href="job-single" class="btn btn-primary py-2">Apply Job</a>
                                 </div>
                             </div>
                         </div><!-- end -->
@@ -498,7 +498,7 @@
                                             <span class="icon-heart"></span>
                                         </a>
                                     </div>
-                                    <a href="job-single.html" class="btn btn-primary py-2">Apply Job</a>
+                                    <a href="job-single" class="btn btn-primary py-2">Apply Job</a>
                                 </div>
                             </div>
                         </div><!-- end -->
@@ -527,7 +527,7 @@
                                             <span class="icon-heart"></span>
                                         </a>
                                     </div>
-                                    <a href="job-single.html" class="btn btn-primary py-2">Apply Job</a>
+                                    <a href="job-single" class="btn btn-primary py-2">Apply Job</a>
                                 </div>
                             </div>
                         </div><!-- end -->
@@ -555,7 +555,7 @@
                                             <span class="icon-heart"></span>
                                         </a>
                                     </div>
-                                    <a href="job-single.html" class="btn btn-primary py-2">Apply Job</a>
+                                    <a href="job-single" class="btn btn-primary py-2">Apply Job</a>
                                 </div>
                             </div>
                         </div><!-- end -->
@@ -584,7 +584,7 @@
                                             <span class="icon-heart"></span>
                                         </a>
                                     </div>
-                                    <a href="job-single.html" class="btn btn-primary py-2">Apply Job</a>
+                                    <a href="job-single" class="btn btn-primary py-2">Apply Job</a>
                                 </div>
                             </div>
                         </div><!-- end -->
@@ -853,8 +853,7 @@
             <div class="row d-flex">
                 <div class="col-md-3 d-flex ftco-animate">
                     <div class="blog-entry align-self-stretch">
-                        <a href="blog-single.html" class="block-20"
-                            style="background-image: url('images/image_1.jpg');">
+                        <a href="blog-single" class="block-20" style="background-image: url('images/image_1.jpg');">
                         </a>
                         <div class="text mt-3">
                             <div class="meta mb-2">
@@ -869,8 +868,7 @@
                 </div>
                 <div class="col-md-3 d-flex ftco-animate">
                     <div class="blog-entry align-self-stretch">
-                        <a href="blog-single.html" class="block-20"
-                            style="background-image: url('images/image_2.jpg');">
+                        <a href="blog-single" class="block-20" style="background-image: url('images/image_2.jpg');">
                         </a>
                         <div class="text mt-3">
                             <div class="meta mb-2">
@@ -885,8 +883,7 @@
                 </div>
                 <div class="col-md-3 d-flex ftco-animate">
                     <div class="blog-entry align-self-stretch">
-                        <a href="blog-single.html" class="block-20"
-                            style="background-image: url('images/image_3.jpg');">
+                        <a href="blog-single" class="block-20" style="background-image: url('images/image_3.jpg');">
                         </a>
                         <div class="text mt-3">
                             <div class="meta mb-2">
@@ -901,8 +898,7 @@
                 </div>
                 <div class="col-md-3 d-flex ftco-animate">
                     <div class="blog-entry align-self-stretch">
-                        <a href="blog-single.html" class="block-20"
-                            style="background-image: url('images/image_4.jpg');">
+                        <a href="blog-single" class="block-20" style="background-image: url('images/image_4.jpg');">
                         </a>
                         <div class="text mt-3">
                             <div class="meta mb-2">
@@ -949,8 +945,10 @@
                 <div class="col-md">
                     <div class="ftco-footer-widget mb-4">
                         <h2 class="ftco-heading-2">About</h2>
-                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
-                            there live the blind texts.</p>
+                        <p>The main company that was founded in 2019, we try to continue to innovate in the field of
+                            technology. About the human resources in the world of technology will always be in demand in
+                            all circles of the future. And we are here to always provide resources that are suitable for
+                            your business needs.</p>
                         <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-3">
                             <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
                             <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
@@ -963,7 +961,7 @@
                         <h2 class="ftco-heading-2">Employers</h2>
                         <ul class="list-unstyled">
                             <li><a href="#" class="py-2 d-block">How it works</a></li>
-                            <li><a href="#" class="py-2 d-block">Register</a></li>
+                            <li><a href="#" class="py-2 d-block">Register </a></li>
                             <li><a href="#" class="py-2 d-block">Post a Job</a></li>
                             <li><a href="#" class="py-2 d-block">Advance Skill Search</a></li>
                             <li><a href="#" class="py-2 d-block">Recruiting Service</a></li>
@@ -989,12 +987,14 @@
                         <h2 class="ftco-heading-2">Have a Questions?</h2>
                         <div class="block-23 mb-3">
                             <ul>
-                                <li><span class="icon icon-map-marker"></span><span class="text">203 Fake St. Mountain
-                                        View, San Francisco, California, USA</span></li>
-                                <li><a href="#"><span class="icon icon-phone"></span><span class="text">+2 392 3929
-                                            210</span></a></li>
-                                <li><a href="#"><span class="icon icon-envelope"></span><span
-                                            class="text">info@yourdomain.com</span></a></li>
+                                <li><span class="icon icon-map-marker"></span><span class="text">84/45 Blok B, Komplek
+                                        MMTC, Medan, Indonesia</span></li>
+                                <li><a href="tel:06180032999"><span class="icon icon-phone"></span><span
+                                            class="text">+62 61 80032999
+                                            (ext. 103)</span></a></li>
+                                <li><a href="mailto:info@infinitysolutions.co.id"><span
+                                            class="icon icon-envelope"></span><span
+                                            class="text">info@infinitysolutions.co.id</span></a></li>
                             </ul>
                         </div>
                     </div>
@@ -1004,13 +1004,14 @@
                 <div class="col-md-12 text-center">
 
                     <p>
-                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+
                         Copyright &copy;<script>
                             document.write(new Date().getFullYear());
 
-                        </script> All rights reserved | This template is made with <i class="icon-heart text-danger"
-                            aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        </script> All rights reserved | Made with <i class="icon-heart text-danger"
+                            aria-hidden="true"></i> by and part of <a href="https://infinitysolutions.co.id"
+                            target="_blank">Infinity Solutions</a>
+
                     </p>
                 </div>
             </div>
