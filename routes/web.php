@@ -12,5 +12,15 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home.index');
 });
+Route::get('/about');
+Route::get('/candidates');
+Route::get('/blog');
+Route::get('/contact');
+Route::get('/employers');
+Route::get('/workers');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
