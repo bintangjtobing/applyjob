@@ -69,12 +69,13 @@
                         anything without your permission, and also always secure your data so that your privacy is
                         maintained.
                     </p>
-                    <form action="">
+                    <form id="loginform" action="/candidateslogin" method="POST">
+                        @csrf
                         <input type="email" name="email" id="email" placeholder="Email" class="form-control mb-2"
                             required>
                         <input type="password" name="password" placeholder="Password" id="password"
                             class="form-control mb-2" required>
-                        <button type="submit" class="btn btn-primary btn-block">Login</button>
+                        <button form="loginform" type="submit" class="btn btn-primary btn-block">Login</button>
                     </form>
                     <hr>
                     <div class="text-center">
@@ -103,7 +104,8 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form action="">
+                    <form id="registeruser" action="/register-new-user" method="POST">
+                        @csrf
                         <div class="form-row">
                             <div class="col">
                                 <input type="text" name="namadepan" id="namadepan" placeholder="First Name"
@@ -128,13 +130,15 @@
                         </div>
                         <div class="form-group">
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="gridCheck" required>
+                                <input class="form-check-input" type="checkbox" id="gridCheck" name="checkpromotions"
+                                    required>
                                 <label class="form-check-label" for="gridCheck">
                                     Receive our promotions and subscritions!
                                 </label>
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-primary btn-block">Register your account</button>
+                        <button form="registeruser" type="submit" class="btn btn-primary btn-block">Register your
+                            account</button>
                     </form>
                     <hr>
                     <div class="text-center">

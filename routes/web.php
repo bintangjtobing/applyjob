@@ -13,14 +13,18 @@
 
 Route::get('/', function () {
     return view('home.index');
-});
-Route::get('/about');
-Route::get('/candidates');
-Route::get('/blog');
-Route::get('/contact');
-Route::get('/employers');
-Route::get('/workers');
+})->name('home');
 
-Auth::routes();
+Route::get('/about', 'homeController@about');
+Route::get('/blog', 'homeController@blog');
+Route::get('/contact', 'homeController@contact');
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::post('/register-new-user', 'CandidateController@registernewuser');
+
+Route::post('/adminlogin', 'AdminLoginController@login');
+Route::post('/employerslogin', 'EmployersLoginController@login');
+Route::post('/candidateslogin', 'CandidateLoginController@login');
+
+Route::get('/candidates-dashboard', 'CandidateLoginController@showdashboardcandidate')->name('candidatespage');
+Route::get('/employers-dashboard', 'EmployersLoginController@showdashboardemploy')->name('employerspage');
+Route::get('/administrator-dashboard', 'AdminLoginController@showdashboardadmin')->name('adminpage');

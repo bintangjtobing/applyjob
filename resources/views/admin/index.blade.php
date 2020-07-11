@@ -1,0 +1,1 @@
+halo {{auth()->member()->firstname}}
