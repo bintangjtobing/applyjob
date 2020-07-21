@@ -29,8 +29,9 @@ class CandidateLoginController extends Controller
             $check = (array)$check;
             session($check);
 
-            return redirect('/candidate');
+            return redirect('/candidate/dashboard');
         }
+        return back()->with('fail', 'Auth failed, please check your valid data. Or contact our administrator');
     }
     public function showdashboardcandidate()
     {

@@ -34,8 +34,9 @@ class AdminLoginController extends Controller
             $check = (array)$check;
             session($check);
 
-            return redirect('/admin');
+            return redirect('/admin/dashboard');
         }
+        return back()->with('fail', 'Auth failed, please check your valid data. Or contact our administrator');
     }
     public function showdashboardadmin()
     {
