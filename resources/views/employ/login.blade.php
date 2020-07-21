@@ -120,12 +120,13 @@
 <body>
     <div class="main">
         <p class="sign" align="center">Sign in</p>
-        <form class="form1">
-            <input class="un " type="text" align="center" placeholder="Username">
-            <input class="pass" type="password" align="center" placeholder="Password">
-            <a class="submit" align="center">Sign in</a>
+        <form class="form1" method="POST" action="{{route('employers.login.submit')}}">
+            @csrf
+            <input class="un " type="text" name="email" align="center" placeholder="Email">
+            <input class="pass" type="password" name="password" align="center" placeholder="Password">
+            <button type="submit" class="submit" align="center">Sign in</button>
             <p class="forgot" align="center"><a href="#">Forgot Password?</p>
-
+        </form>
 
     </div>
 

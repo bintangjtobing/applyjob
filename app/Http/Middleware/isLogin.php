@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 
-class isEmployer
+class isLogin
 {
     /**
      * Handle an incoming request.
@@ -15,8 +15,8 @@ class isEmployer
      */
     public function handle($request, Closure $next)
     {
-        if (($request->session()->get('isLogin') != 'employ')) {
-            return redirect('/employ/login');
+        if (($request->session()->get('isLogin') != 'login')) {
+            return redirect('/candidate/login');
         }
 
         return $next($request);

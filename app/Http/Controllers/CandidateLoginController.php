@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 use Auth;
 
 class CandidateLoginController extends Controller
@@ -16,20 +18,19 @@ class CandidateLoginController extends Controller
     }
     public function login(Request $request)
     {
-        // validate form data
-        $this->validate($request, [
-            'email' => 'required|email',
-            'password' => 'required|min:6'
-        ]);
+        $email = $request->email;
+        $password = $request->password;
+        $check = DB::table('candidates')
+            ->where('email', $email)
+            ->first();
+        // dd($check);
+        if ($check && Hash::check($password, $check->password)) {
+            $check->isLogin = 'candidate';
+            $check = (array)$check;
+            session($check);
 
-        // attempt to log the user in
-        if (Auth::guard('candidates')->attempt(['email' => $request->email, 'password' => $request->password], $request->remember)) {
-            // if success, redirect to location
-            return redirect()->intended(route('candidates.dashboard'));
-            // return true;
+            return redirect('/candidate');
         }
-        // if unsuccess, redirect back to login
-        return redirect()->back()->withInput($request->only('email', 'remember'));
     }
     public function showdashboardcandidate()
     {

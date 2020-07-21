@@ -16,7 +16,7 @@ class isCandidates
     public function handle($request, Closure $next)
     {
         if (($request->session()->get('isLogin') != 'candidate')) {
-            return redirect('/sign-in/candidates');
+            return redirect('/candidate/login');
         }
 
         return $next($request);

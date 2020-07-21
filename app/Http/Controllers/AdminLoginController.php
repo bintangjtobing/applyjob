@@ -8,6 +8,9 @@ use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Auth;
 
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
+
 class AdminLoginController extends Controller
 {
 
@@ -20,10 +23,19 @@ class AdminLoginController extends Controller
     }
     public function login(Request $request)
     {
-        if (auth()->guard('member')->attempt(['email' => $request->email, 'password' => $request->password])) {
-            return redirect()->route('adminpage');
+        $email = $request->email;
+        $password = $request->password;
+        $check = DB::table('users')
+            ->where('email', $email)
+            ->first();
+        // dd($check);
+        if ($check && Hash::check($password, $check->password)) {
+            $check->isLogin = 'admin';
+            $check = (array)$check;
+            session($check);
+
+            return redirect('/admin');
         }
-        return back()->withErrors(['email' => 'Email or password are wrong.']);
     }
     public function showdashboardadmin()
     {
