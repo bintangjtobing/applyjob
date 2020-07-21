@@ -1,27 +1,22 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
-
 namespace App\Http\Controllers;
 
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Support\Facades\Auth;
 
 class AdminLoginController extends Controller
 {
 
     use AuthenticatesUsers;
     protected $guard = 'member';
-    protected $redirectTo = '/';
+
     public function __construct()
     {
-        $this->middleware('guest')->except('logout');
-    }
-    public function guard()
-    {
-        return auth()->guard('member');
+        $this->middleware('guest:member');
     }
     public function login(Request $request)
     {
@@ -33,5 +28,9 @@ class AdminLoginController extends Controller
     public function showdashboardadmin()
     {
         return view('admin.index');
+    }
+    public function showLoginForm()
+    {
+        return view('admin.login');
     }
 }

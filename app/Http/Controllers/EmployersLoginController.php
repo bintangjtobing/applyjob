@@ -1,27 +1,21 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
-
 namespace App\Http\Controllers;
 
 use App\Employers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Support\Facades\Auth;
 
 class EmployersLoginController extends Controller
 {
-
     use AuthenticatesUsers;
     protected $guard = 'employers';
-    protected $redirectTo = '/';
+
     public function __construct()
     {
-        $this->middleware('guest')->except('logout');
-    }
-    public function guard()
-    {
-        return auth()->guard('employers');
+        $this->middleware('guest:employers');
     }
     public function login(Request $request)
     {
@@ -33,5 +27,9 @@ class EmployersLoginController extends Controller
     public function showdashboardemploy()
     {
         return view('employ.index');
+    }
+    public function showLoginForm()
+    {
+        return view('employ.login');
     }
 }

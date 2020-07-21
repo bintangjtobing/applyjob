@@ -46,6 +46,10 @@ return [
             'provider' => 'users',
             'hash' => false,
         ],
+        'member-api' => [
+            'driver' => 'token',
+            'provider' => 'member',
+        ],
         'member' => [
             'driver' => 'session',
             'provider' => 'member',
@@ -119,6 +123,21 @@ return [
     'passwords' => [
         'users' => [
             'provider' => 'users',
+            'table' => 'password_resets',
+            'expire' => 60,
+        ],
+        'member' => [
+            'provider' => 'member',
+            'table' => 'password_resets',
+            'expire' => 15,
+        ],
+        'candidates' => [
+            'provider' => 'candidates',
+            'table' => 'password_resets',
+            'expire' => 60,
+        ],
+        'employers' => [
+            'provider' => 'employers',
             'table' => 'password_resets',
             'expire' => 60,
         ],

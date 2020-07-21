@@ -1,1 +1,2 @@
-halo {{auth()->member()->firstname}}
+halo.
+Ini admin dashboard

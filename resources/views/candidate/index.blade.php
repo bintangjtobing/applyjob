@@ -1,3 +1,2 @@
-<?php
-var_dump(Auth::check())
-?>
+halo
+ini candidate dashboard

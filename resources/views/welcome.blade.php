@@ -69,7 +69,7 @@
                         anything without your permission, and also always secure your data so that your privacy is
                         maintained.
                     </p>
-                    <form id="loginform" action="/candidateslogin" method="POST">
+                    <form id="loginform" action="/candidates/login" method="POST">
                         @csrf
                         <input type="email" name="email" id="email" placeholder="Email" class="form-control mb-2"
                             required>

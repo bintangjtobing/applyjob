@@ -1,44 +1,42 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
-
 namespace App\Http\Controllers;
 
-use App\Candidate;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Illuminate\Foundation\Auth\AuthenticatesUsers;
-use Illuminate\Support\Facades\Auth;
+use Auth;
 
 class CandidateLoginController extends Controller
 {
-
-    use AuthenticatesUsers;
     protected $guard = 'candidates';
-    protected $redirectTo = '/';
+
     public function __construct()
     {
-        $this->middleware('guest')->except('logout');
-    }
-    public function guard()
-    {
-        return auth()->guard('candidates');
+        $this->middleware('guest:candidates');
     }
     public function login(Request $request)
     {
-        dd($request->all());
-        // if (Auth::attempt([
-        //     'email' => $request->email,
-        //     'password' => $request->password,
-        // ])) {
-        // return redirect('/candidates-dashboard');
-        // dd(Auth::check());
-        // dd($request->all());
-        // }
-        // return back()->withErrors(['email' => 'Email or password are wrong.']);
+        // validate form data
+        $this->validate($request, [
+            'email' => 'required|email',
+            'password' => 'required|min:6'
+        ]);
+
+        // attempt to log the user in
+        if (Auth::guard('candidates')->attempt(['email' => $request->email, 'password' => $request->password], $request->remember)) {
+            // if success, redirect to location
+            return redirect()->intended(route('candidates.dashboard'));
+            // return true;
+        }
+        // if unsuccess, redirect back to login
+        return redirect()->back()->withInput($request->only('email', 'remember'));
     }
     public function showdashboardcandidate()
     {
         return view('candidate.index');
+    }
+    public function showLoginForm()
+    {
+        return view('candidate.login');
     }
 }
