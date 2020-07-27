@@ -44,4 +44,8 @@ class EmployersLoginController extends Controller
     {
         return view('employ.login');
     }
+    public function employershomepage()
+    {
+        return view('employ.home.index');
+    }
 }

@@ -10,7 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+// Content Home
 Route::get('/', function () {
     return view('home.index');
 })->name('home');
@@ -24,6 +24,12 @@ Route::get('/contact', 'homeController@contact');
 
 // Register New User
 Route::post('/register-new-user', 'CandidateController@registernewuser');
+
+// Employers : Homepage of employers (perusahaan)
+Route::get('/employers', 'EmployersLoginController@employershomepage');
+
+// Candidates : homepage of candidates (karyawan)
+Route::get('/candidates', 'CandidateLoginController@candidateshomepage');
 
 // Login to dashboard
 // Admin //

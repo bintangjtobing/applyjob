@@ -2,10 +2,10 @@
 <html lang="en">
 
 <head>
-    <title>Jobpply | Part of Infinity Solutions</title>
+    <title>@yield('titlepage')</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <meta name="description" content="@yield('descpage')">
     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600,700,800,900" rel="stylesheet">
 
     <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
@@ -147,6 +147,108 @@
                     </div>
                     <div class="text-center">
                         <p>By registering, I have read and agree to Jobpply.com's Terms of Use and Privacy Policy.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{-- End modal --}}
+
+    {{-- Modal Signn up Employers--}}
+    <div class="modal fade" id="employsignup" tabindex="-1" role="dialog" aria-labelledby="employsignup"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="signupcandidate">Signup your company account here.</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="registeruser" action="/employ-new-user" method="POST">
+                        @csrf
+                        <div class="form-row">
+                            <div class="col">
+                                <input type="text" name="namadepan" id="namadepan" placeholder="First Name"
+                                    class="form-control mb-2" required>
+                            </div>
+                            <div class="col">
+                                <input type="text" name="namabelakang" id="namabelakang" placeholder="Last Name"
+                                    class="form-control mb-2" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col">
+                                <input type="text" name="companyname" id="companyname" placeholder="Company Name"
+                                    class="form-control mb-2" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col">
+                                <input type="email" name="email" placeholder="Email" id="email"
+                                    class="form-control mb-2" required>
+                            </div>
+                            <div class="col">
+                                <input type="tel" name="nohp" id="nohp" placeholder="Phone Number" class="form-control"
+                                    pattern="[0-9]{4}-[0-9]{4}-[0-9]{4}" required>
+                                <small class="text-muted">Format: 0812-1234-5678</small>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col">
+                                <input type="password" name="password" placeholder="Password" id="password"
+                                    class="form-control mb-2" required>
+                            </div>
+                        </div>
+
+                        <button form="registeruser" type="submit" class="btn btn-primary btn-block">Register your
+                            account</button>
+                    </form>
+                    <hr>
+                    <div class="text-center">
+                        <p class="blackparagraph">Already have an account? <a href="" data-dismiss="modal"
+                                data-toggle="modal" data-target="#loginemployers">Signin here.</a></p>
+                    </div>
+                    <div class="text-center">
+                        <p>By registering, I have read and agree to Jobpply.com's Terms of Use and Privacy Policy.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{-- End modal --}}
+
+    {{-- Modal login employers --}}
+    <!-- Modal -->
+    <div class="modal fade" id="loginemployers" tabindex="-1" role="dialog" aria-labelledby="loginemployers"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                {{-- <div class="modal-header">
+                    <h5 class="modal-title" id="loginemployers">Login Candidate</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div> --}}
+                <div class="modal-body">
+                    <h4>Sign into your company dashboard</h4>
+                    <form id="loginform" action="{{route('employers.login.submit')}}" method="POST">
+                        @csrf
+                        <input type="email" name="email" id="email" placeholder="Email" class="form-control mb-2"
+                            required>
+                        <input type="password" name="password" placeholder="Password" id="password"
+                            class="form-control mb-2" required>
+                        <button type="submit" class="btn btn-primary btn-block">Login</button>
+                    </form>
+                    <hr>
+                    <div class="text-center">
+                        <p class="blackparagraph">New Company? <a href="" data-dismiss="modal" data-toggle="modal"
+                                data-target="#employsignup">Sign up here now!</a></p>
+                    </div>
+                    <div class="text-center">
+                        <p>By connecting to Jobpply, I have read and agree to Jobpply.com's Terms of Use and Privacy
+                            Policy.</p>
                     </div>
                 </div>
             </div>
