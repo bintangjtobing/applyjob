@@ -82,7 +82,8 @@
                                 </tr>
                                 <tr>
                                     <td colspan="2">
-                                        <a href="#" class="btn btn-primary btn-block btn-sm">Ubah langganan</a>
+                                        <a href="" data-toggle="modal" data-target="#ubahlangganan"
+                                            class="btn btn-primary btn-block btn-sm">Ubah langganan</a>
                                     </td>
                                 </tr>
                             </tbody>
@@ -164,11 +165,34 @@
                         <div class="col">
                             <div class="form-group">
                                 <label for="">Warga Negara</label>
-                                <select name="country" id="" class="form-control custom-select">
+                                <select name="country" id="" class="form-control custom-select" required>
+                                    <option>Pilih Warga Negara:</option>
                                     @foreach ($country as $country)
                                     <option value="{{$country->id}}">{{$country->iso}} - {{$country->name}}</option>
                                     @endforeach
                                 </select>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="">Identitas</label>
+                                <select name="identitas" id="" class="form-control custom-select" required>
+                                    <option>Pilih Identitas:</option>
+                                    <option value="KTP" @if(session()->get('identitas')=='KTP')selected @else
+                                        @endif>KTP</option>
+                                    <option value="SIM" @if(session()->get('identitas')=='SIM')selected @else
+                                        @endif>SIM</option>
+                                    <option value="No Kartu Keluarga" @if(session()->get('identitas')=='No Kartu
+                                        Keluarga')selected
+                                        @else @endif>No Kartu Keluarga</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="">No Identitas</label>
+                                <input type="text" name="no_identitas" value="@if(session()->get('no_identitas')=='') - @else {{session()->get('no_identitas')}}
+                                @endif" required id="" class="form-control">
                             </div>
                         </div>
                     </div>
@@ -180,6 +204,91 @@
                                 @endif</textarea>
                             </div>
                         </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Save changes</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{{-- Modal ubah langganan --}}
+<!-- Modal -->
+<div class="modal fade" id="ubahlangganan" tabindex="-1" aria-labelledby="ubahlangganan" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="ubahlangganan">Ubah langganan {{session()->get('firstname')}}
+                    {{session()->get('lastname')}}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form action="/dashboard/candidate/updatesetting/langganan/{{session()->get('id')}}" method="POST">
+                @csrf
+                <div class="modal-body">
+                    <div class="table-responsive">
+                        <table class="table header-border">
+                            <tbody>
+                                <tr>
+                                    <td class="text-right">Email Lowongan :</td>
+                                    <td>
+                                        <div class="form-group">
+                                            <label for="" class="radio-inline mt-4 mr-3">
+                                                <input type="radio" name="notif_lowongan" value="1" id=""> Langganan
+                                            </label>
+                                            <label for="" class="radio-inline mt-4 mr-3">
+                                                <input type="radio" name="notif_lowongan" value="0" id=""> Tidak
+                                                Langganan
+                                            </label>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right">Email Peluang Kerja :</td>
+                                    <td>
+                                        <div class="form-group">
+                                            <label for="" class="radio-inline mt-4 mr-3">
+                                                <input type="radio" name="notif_peluang" value="1" id=""> Langganan
+                                            </label>
+                                            <label for="" class="radio-inline mt-4 mr-3">
+                                                <input type="radio" name="notif_peluang" value="0" id=""> Tidak
+                                                Langganan
+                                            </label>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right">Email Promosi dari mitra Applyjob :</td>
+                                    <td>
+                                        <div class="form-group">
+                                            <label for="" class="radio-inline mt-4 mr-3">
+                                                <input type="radio" name="notif_promosi" value="1" id=""> Langganan
+                                            </label>
+                                            <label for="" class="radio-inline mt-4 mr-3">
+                                                <input type="radio" name="notif_promosi" value="0" id=""> Tidak
+                                                Langganan
+                                            </label>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right">Email pembaruan profil :</td>
+                                    <td>
+                                        <div class="form-group">
+                                            <label for="" class="radio-inline mt-4 mr-3">
+                                                <input type="radio" name="notif_profil" value="1" id=""> Langganan
+                                            </label>
+                                            <label for="" class="radio-inline mt-4 mr-3">
+                                                <input type="radio" name="notif_profil" value="0" id=""> Tidak Langganan
+                                            </label>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
                 <div class="modal-footer">

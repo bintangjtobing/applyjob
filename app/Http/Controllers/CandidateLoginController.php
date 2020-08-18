@@ -65,8 +65,22 @@ class CandidateLoginController extends Controller
         $cand->email = $request->email;
         $cand->nohp = $request->nohp;
         $cand->alamat = $request->alamat;
+        $cand->warga_negara = $request->country;
+        $cand->identitas = $request->identitas;
+        $cand->no_identitas = $request->no_identitas;
 
         $cand->save();
         return back()->with('sukses', 'Selamat data kamu berhasil diubah!');
+    }
+    public function settinglangganan($id, Request $request)
+    {
+        $cand = Candidate::find($id);
+        $cand->notif_lowongan = $request->notif_lowongan;
+        $cand->notif_peluang = $request->notif_peluang;
+        $cand->notif_promosi = $request->notif_promosi;
+        $cand->notif_profil = $request->notif_profil;
+
+        $cand->save();
+        return back()->with('sukses', 'Selamat data langganan kamu berhasil diubah.');
     }
 }
