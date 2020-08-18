@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Candidate;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
@@ -29,16 +30,29 @@ class CandidateLoginController extends Controller
             $check = (array)$check;
             session($check);
 
-            return redirect('/candidate/dashboard');
+            return redirect('dashboard/candidate/');
         }
         return back()->with('fail', 'Auth failed, please check your valid data. Or contact our administrator');
     }
     public function showdashboardcandidate()
     {
-        return view('candidate.index');
+        return view('candidate.dashboard.index');
     }
     public function showLoginForm()
     {
         return view('candidate.login');
+    }
+    public function informationmy($encode)
+    {
+        $decode = base64_decode($encode);
+        // dd($decode);
+    }
+    public function settingmy($encode)
+    {
+        $decode = base64_decode($encode);
+        // dd($decode);
+        $info = Candidate::find($decode);
+        return view('candidate.dashboard.setting');
+        // dd($info);
     }
 }

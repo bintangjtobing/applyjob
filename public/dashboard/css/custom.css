@@ -1,0 +1,15 @@
+.card-body .float-right img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid #fff;
+}
+
+.header-right .icons .user-img img {
+    object-fit: cover;
+}
+
+.header-right .icons .user-img .activity {
+    background-image: linear-gradient(230deg, #fff, rgb(54, 195, 54));
+}

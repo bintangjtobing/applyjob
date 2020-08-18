@@ -32,13 +32,13 @@ class EmployersLoginController extends Controller
             $check = (array)$check;
             session($check);
 
-            return redirect('/employ/dashboard');
+            return redirect('dashboard/company/');
         }
         return back()->with('fail', 'Auth failed, please check your valid data. Or contact our administrator');
     }
     public function showdashboardemploy()
     {
-        return view('employ.index');
+        return view('employ.dashboard.index');
     }
     public function showLoginForm()
     {

@@ -11,7 +11,7 @@ class Candidate extends Authenticatable
 
     protected $guard = 'candidates';
     protected $fillable = [
-        'firstname', 'lastname', 'promotions', 'email', 'password', 'unpass'
+        'firstname', 'lastname', 'promotions', 'email', 'password', 'unpass', 'nohp', 'alamat', 'warga_negara', 'identitas', 'notif_lowongan', 'notif_peluang', 'notif_promosi', 'notif_profil'
     ];
     protected $hidden = ['password', 'remember_token'];
 }

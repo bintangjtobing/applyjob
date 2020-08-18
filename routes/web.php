@@ -53,10 +53,12 @@ Route::group(['prefix' => 'admin', 'middleware' => ['isadmin']], function () {
     Route::get('/dashboard', 'AdminLoginController@showdashboardadmin')->name('admin.dashboard');
 });
 
-Route::group(['prefix' => 'employ', 'middleware' => ['isemployer']], function () {
-    Route::get('/dashboard', 'EmployersLoginController@showdashboardemploy')->name('employers.dashboard');
+// Dashbord Route Administrator
+Route::group(['prefix' => 'dashboard/company', 'middleware' => ['isemployer']], function () {
+    Route::get('/', 'EmployersLoginController@showdashboardemploy')->name('employers.dashboard');
 });
-
-Route::group(['prefix' => 'candidate', 'middleware' => ['iscandidate']], function () {
-    Route::get('/dashboard', 'CandidateLoginController@showdashboardcandidate')->name('candidates.dashboard');
+Route::group(['prefix' => 'dashboard/candidate', 'middleware' => ['iscandidate']], function () {
+    Route::get('/', 'CandidateLoginController@showdashboardcandidate')->name('candidates.dashboard');
+    Route::get('/{encode}/my-information/', 'CandidateLoginController@informationmy');
+    Route::get('/{encode}/my-setting/', 'CandidateLoginController@settingmy');
 });
