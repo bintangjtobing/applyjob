@@ -61,4 +61,5 @@ Route::group(['prefix' => 'dashboard/candidate', 'middleware' => ['iscandidate']
     Route::get('/', 'CandidateLoginController@showdashboardcandidate')->name('candidates.dashboard');
     Route::get('/{encode}/my-information/', 'CandidateLoginController@informationmy');
     Route::get('/{encode}/my-setting/', 'CandidateLoginController@settingmy');
+    Route::post('/updatesetting/profil/{id}', 'CandidateLoginController@settingprofil');
 });
